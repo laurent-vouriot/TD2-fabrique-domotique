@@ -22,12 +22,20 @@ public class AppliDomotique {
 
     public static void connecter(int type) {
         switch (type) {
-            case 1:
-                /* A completer */
-                break;
             case 2:
-                /* A completer */
+                Radio radio1 = new Radio("radio1");
+                radio1.equiper("antenne parabolique");
+                objets.add(radio1);
                 break;
+            case 1:
+                Cafetiere cafetiere1= new Cafetiere("cafetiere1");
+                cafetiere1.equiper("drone de surveillance");
+                objets.add(cafetiere1);
+                break;
+            default:
+                System.out.println("erreur");
+                break;
+
         }
     }
 
