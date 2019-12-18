@@ -18,8 +18,5 @@ public class AppliDomotique {
 
         Decorateur impRFaxScanner = new Fax(impRScanner);
         impRFaxScanner.imprimer("FaxScanner");
-
-
-
     }//main()
 }

@@ -1,4 +1,4 @@
-package fr.univamu.iut.exo2;
+package fr.univamu.iut.exo4;
 
 public class Cafetiere implements Connectable {
     @Override
