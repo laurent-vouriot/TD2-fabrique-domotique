@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Collection;
 
 public class AppliDomotique {
     static ArrayList<Connectable> objets = new ArrayList<Connectable>();
@@ -20,25 +21,45 @@ public class AppliDomotique {
         return nomClasse;
     }
 
-    public static void connecter(String nomClasse) {
-        try {
-            Connectable c = fab.fabriquer(nomClasse);
-            objets.add(c);
-            System.out.println("Ajout d'un nouveau objet de type "
-                    + (c.getClass()).getName());
-        } catch (ClassNotFoundException | NoClassDefFoundError e) {
-            System.out.println("Cette classe n'existe pas");
-        } catch (ClassCastException e) {
-            System.out.println("Cette classe n'est pas connectable");
+
+    static public void activer(ArrayList<Connectable> objets) {
+        for (Connectable c : objets) {
+            Demarreur d = new Demarreur();
+            String choixUser = new String();
+            System.out.println("voulez vous activer " + c + "  (yes/no) ?");
+            BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+            try {
+                choixUser = in.readLine();
+                if (choixUser.equals("yes")) {
+                    System.out.println(" attaché \n");
+                    d.attacher(c);
+                }
+                else if (choixUser.equals("no")) {
+                    System.out.println("pas attaché \n");
+                }
+                else
+                    System.out.printf("erreur : yes/no \n");
+            } catch (IOException e) {
+                e.getMessage();
+            }//catch()
+            d.demarrerLesActives();
+
+
         }
-    }
+    }//activer()
 
     public static void main(String[] args) {
-        String classeEffective = new String();
-        while (!(classeEffective = menu()).isEmpty()) {
-            connecter(classeEffective);
-        }
-        System.out.println(objets);
+
+        Radio     radio     = new Radio();
+        Radiateur radiateur = new Radiateur();
+        Cafetiere Cafetiere = new Cafetiere();
+
+        objets.add(radiateur);
+        objets.add(radio);
+        objets.add(Cafetiere);
+        activer(objets);
+
+
     }
 
 }
