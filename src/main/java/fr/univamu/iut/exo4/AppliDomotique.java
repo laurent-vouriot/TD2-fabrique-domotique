@@ -1,5 +1,7 @@
 package fr.univamu.iut.exo4;
 
+
+import java.awt.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -22,7 +24,7 @@ public class AppliDomotique {
     }
 
 
-    static public void activer(ArrayList<Connectable> objets) {
+    static public ArrayList<Connectable> activer(ArrayList<Connectable> objets) {
         for (Connectable c : objets) {
             Demarreur d = new Demarreur();
             String choixUser = new String();
@@ -31,7 +33,7 @@ public class AppliDomotique {
             try {
                 choixUser = in.readLine();
                 if (choixUser.equals("yes")) {
-                    System.out.println(" attaché \n");
+                    System.out.println("attaché \n");
                     d.attacher(c);
                 }
                 else if (choixUser.equals("no")) {
@@ -43,10 +45,37 @@ public class AppliDomotique {
                 e.getMessage();
             }//catch()
             d.demarrerLesActives();
+        }
+        return objets;
+    }//activer()
+
+
+    static public void gererConnectables(ArrayList<Connectable> objets) {
+        for(Connectable c : objets ) {
+
+            Demarreur d = new Demarreur();
+            String choixUser = new String();
+            System.out.println("détacher " + c + "? (y/n)");
+            BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+            try {
+                choixUser = in.readLine();
+                if (choixUser.equals("yes")) {
+                    System.out.println(c + "détacher \n");
+                    d.detacher(c);
+                }
+                else if (choixUser.equals("no")) {
+                    System.out.println(c + " pas détaché \n");
+                }
+                else
+                    System.out.printf("erreur : yes/no \n");
+            } catch (IOException e) {
+                e.getMessage();
+            }//catch()
 
 
         }
-    }//activer()
+
+    }//gererConnectables()
 
     public static void main(String[] args) {
 
@@ -57,7 +86,14 @@ public class AppliDomotique {
         objets.add(radiateur);
         objets.add(radio);
         objets.add(Cafetiere);
-        activer(objets);
+        ArrayList<Connectable> test = activer(objets);
+        gererConnectables(test);
+
+        for (Connectable c : test) {
+            test.toString();
+        }
+
+
 
 
     }
