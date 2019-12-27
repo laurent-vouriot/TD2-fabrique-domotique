@@ -4,12 +4,9 @@ package fr.univamu.iut.exo1;
  * @class Cafetiere
  */
 public class Cafetiere implements Connectable {
-    private String name;
-    public Cafetiere(String name) {
-        this.name = name;
-    }//Cafetiere()
+    public Cafetiere() {}
     public void equiper(String gadget) {
-        System.out.println("bleep blop je suis une cafetière avec " + gadget);
+        System.out.println("bleep blop je suis une cafetière avec le gadget : " + gadget);
     }//equiper()
 
 }//Cafetiere

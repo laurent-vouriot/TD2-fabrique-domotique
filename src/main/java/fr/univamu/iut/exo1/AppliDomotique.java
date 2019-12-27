@@ -5,6 +5,11 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
+/**
+ * TD 2 EXO 1
+ * @author Laurent Vouriot
+ *
+ */
 public class AppliDomotique {
     static ArrayList<Connectable> objets = new ArrayList<Connectable>();
 
@@ -23,15 +28,18 @@ public class AppliDomotique {
     public static void connecter(int type) {
         switch (type) {
             case 2:
-                Radio radio1 = new Radio("radio1");
-                radio1.equiper("antenne parabolique");
-                objets.add(radio1);
-                break;
-            case 1:
-                Cafetiere cafetiere1= new Cafetiere("cafetiere1");
+                Cafetiere cafetiere1= new Cafetiere();
                 cafetiere1.equiper("drone de surveillance");
                 objets.add(cafetiere1);
+                System.out.println("radio ajoutée");
                 break;
+            case 1:
+                Radio radio0 = new Radio();
+                radio0.equiper("antenne parabolique");
+                objets.add(radio0);
+                System.out.println("radio ajoutée");
+                break;
+
             default:
                 System.out.println("erreur");
                 break;
@@ -47,3 +55,8 @@ public class AppliDomotique {
         System.out.println(objets);
     }
 }
+
+/**
+ * Question 2 On est obligé de modifier le code à chaque fois que l'on fait un ajout, de même pour equiper(), on doit modifier la classe cliente.
+ *
+ */

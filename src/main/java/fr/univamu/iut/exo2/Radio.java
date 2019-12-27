@@ -1,8 +1,11 @@
 package fr.univamu.iut.exo2;
 
+/**
+ * @class Radio
+ */
 public class Radio implements Connectable {
-    @Override
+    public Radio () {}
     public void equiper(String gadget) {
-        System.out.println("On équipe la radio avec " + gadget);
+        System.out.println("bleep bloop je suis une radio avec le gadget : " + gadget);
     }
 }
