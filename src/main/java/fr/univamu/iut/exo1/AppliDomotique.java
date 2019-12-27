@@ -60,3 +60,5 @@ public class AppliDomotique {
  * Question 2 On est obligé de modifier le code à chaque fois que l'on fait un ajout, de même pour equiper(), on doit modifier la classe cliente.
  *
  */
+
+

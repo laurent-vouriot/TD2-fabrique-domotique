@@ -1,8 +1,11 @@
 package fr.univamu.iut.exo2;
 
+
 /**
- * @class Cafetiere
+ * @aurhor Laurent
+ * classe Cafetière fille de connectable
  */
+
 public class Cafetiere implements Connectable {
     public Cafetiere() {}
     public void equiper(String gadget) {

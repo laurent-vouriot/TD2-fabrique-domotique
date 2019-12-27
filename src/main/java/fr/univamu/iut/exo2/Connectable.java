@@ -1,6 +1,9 @@
 package fr.univamu.iut.exo2;
 
+/**
+ * @author Laurent
+ * interface Connectable
+ */
 public interface Connectable {
-
-    public void equiper(String gadget);
+     void equiper(String gadget);
 }

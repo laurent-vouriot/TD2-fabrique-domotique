@@ -1,8 +1,10 @@
 package fr.univamu.iut.exo2;
 
 /**
- * @class Radio
+ * @aurhor Laurent
+ * classe Radio, fille de connectable
  */
+
 public class Radio implements Connectable {
     public Radio () {}
     public void equiper(String gadget) {
