@@ -5,7 +5,7 @@ package fr.univamu.iut.exo2;
  * @author Laurent
  * Fabrique concrète
  */
-public class FabriqueConcrete extends Fabrique{
+public class FabriqueConcrete extends Fabrique {
 
     @Override
     public Connectable creer(String classe) throws ClassNotFoundException{
@@ -24,6 +24,7 @@ public class FabriqueConcrete extends Fabrique{
         return c;
     }
 
+    @Override
     public void equiper(Connectable c) {
         c.equiper("antenne parabolique");
     }

@@ -1,5 +1,10 @@
 package fr.univamu.iut.exo3;
 
-public abstract class Imprimante {
-    public abstract void imprimer(String s);
-}
+
+/**
+ * @author Laurent
+ * Interface Imprimante
+ */
+public interface Imprimante {
+     void imprimer();
+}//Imprimante

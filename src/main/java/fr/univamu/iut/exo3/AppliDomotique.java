@@ -1,22 +1,25 @@
 package fr.univamu.iut.exo3;
 
-
-
 public class AppliDomotique {
-    public static void main(String[] args) {
+      public static void main(String[] args){
+            Imprimante impLocale = new ImprimanteLocale();
+            Imprimante impReseau = new ImprimanteReseau();
 
-        Imprimante impR = new ImprimanteReseau();
-        impR.imprimer("bonjour tout le monde");
+            impLocale.imprimer();
+            impReseau.imprimer();
 
-        Imprimante impL = new ImprimanteLocal();
-        impL.imprimer("bonjour tout le monde");
+            Imprimante impLocaleSanner = new Scanner(impLocale);
+            Imprimante impReseauFax    = new Fax(impReseau);
 
-        Decorateur impLScanner = new Scanner(impL);
-        impLScanner.imprimer("scanner local");
-        Decorateur impRScanner = new Scanner(impR);
-        impRScanner.imprimer("scanner reseau");
+            impLocaleSanner.imprimer();
+            impReseauFax.imprimer();
 
-        Decorateur impRFaxScanner = new Fax(impRScanner);
-        impRFaxScanner.imprimer("FaxScanner");
-    }//main()
-}
+            Imprimante impLocaleScannerPhotocopieur = new Photocopieur(impLocaleSanner);
+            Imprimante impReseuFaxScanner           = new Scanner(impReseauFax);
+
+            impLocaleScannerPhotocopieur.imprimer();
+            impReseuFaxScanner.imprimer();
+
+
+      }//main()
+}//AppliDomotique

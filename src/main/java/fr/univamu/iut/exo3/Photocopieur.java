@@ -1,24 +1,18 @@
 package fr.univamu.iut.exo3;
 
-
 /**
- * @class photocopieur extends Imprimante
+ * @author Laurent
+ * classe photocopieur implemente Photocopieur
  */
-public class Photocopieur extends Decorateur{
+public class Photocopieur implements Imprimante{
 
     Imprimante imprimanteADecorer;
 
-    public Photocopieur(Imprimante i) {
-        imprimanteADecorer = i;
-    }//Photocopieur()
-
-    //nouvelle methode
-    public void photocopier(String fic) {
-        System.out.println("bip bip je photocopie le fichier : " + fic);
-    }//photocopuer()
+    public Photocopieur(Imprimante imprimante) { imprimanteADecorer = imprimante;}
 
     @Override
-    public void imprimer(String s) {
-            imprimanteADecorer.imprimer("et je possède photocopieur : ");
+    public void imprimer() {
+        imprimanteADecorer.imprimer();
+        System.out.println("la fonction Photocopieur activée");
     }//imprimer()
-}//Photocopieur
+}

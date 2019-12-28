@@ -1,23 +1,19 @@
 package fr.univamu.iut.exo3;
 
 /**
- * @class Fax extends Imprimante
+ * @author Laurent
+ * classe fax qui est un decorateur
  */
-public class Fax extends Decorateur{
+public class Fax  implements Decorateur{
 
     Imprimante imprimanteADecorer;
 
-    public Fax(Imprimante i) {
-        imprimanteADecorer = i;
-    }//Photocopieur()
+    public Fax(Imprimante imprimante) { imprimanteADecorer = imprimante;}
 
-    //nouvelle methode
-    public void Fax(String fic) {
-        System.out.println("bip bip je Fax le fichier : " + fic);
-    }//photocopuer()
 
     @Override
-    public void imprimer(String s) {
-        imprimanteADecorer.imprimer("et je possède fax " + s);
-    }//imprimer()
-}//Photocopieur
+    public void imprimer() {
+        imprimanteADecorer.imprimer();
+        System.out.println("la fonction Fax activée");
+    }
+}//Fax

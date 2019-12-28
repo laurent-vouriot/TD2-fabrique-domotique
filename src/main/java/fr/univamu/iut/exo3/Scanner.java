@@ -1,23 +1,20 @@
 package fr.univamu.iut.exo3;
 
 /**
- * @class Fax extends Imprimante
+ * @author laurent
+ * classe scanner implemente Imprimante
  */
-public class Scanner extends Decorateur{
+public class Scanner implements Imprimante {
 
     Imprimante imprimanteADecorer;
 
-    public Scanner(Imprimante i) {
-        imprimanteADecorer = i;
-    }//Photocopieur()
-
-    //nouvelle methode
-    public void  Scanner(String fic) {
-        System.out.println("bip bip je Scanne le fichier : " + fic);
-    }//Scanner()
+    public Scanner(Imprimante imprimante) { imprimanteADecorer = imprimante;}
 
     @Override
-    public void imprimer(String s) {
-        imprimanteADecorer.imprimer(" et je possède scanner : " + s);
+    public void imprimer() {
+        imprimanteADecorer.imprimer();
+        System.out.println("la fonction Scanner est activée" );
     }//imprimer()
-}//Scanner
+
+
+}

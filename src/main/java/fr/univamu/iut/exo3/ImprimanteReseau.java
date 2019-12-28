@@ -1,10 +1,15 @@
 package fr.univamu.iut.exo3;
 
-public class ImprimanteReseau extends Imprimante{
+/**
+ * @author Laurent
+ * ImprimanteReseau implemente Imprimante
+ */
+public class ImprimanteReseau implements Imprimante {
 
     public ImprimanteReseau() {}
 
-    public void imprimer(String s) {
-        System.out.println("brrrt brrrt j'imprime en réseau: " + s);
-    }//imprimer()
-}
+    @Override
+    public void imprimer() {
+        System.out.println("je suis une imprimante réseau");
+    }//Imprimer()
+}//ImprimanteReseau
