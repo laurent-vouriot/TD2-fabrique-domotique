@@ -4,7 +4,7 @@ package fr.univamu.iut.exo3;
  * @author Laurent
  * classe fax qui est un decorateur
  */
-public class Fax  implements Decorateur{
+public class Fax  implements Decorateur {
 
     Imprimante imprimanteADecorer;
 

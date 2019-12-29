@@ -1,25 +1,34 @@
 package fr.univamu.iut.exo4;
 
-
 import java.util.ArrayList;
+import java.util.Collection;
 
-public class Demarreur {
-
-    private ArrayList<Connectable> objets = new ArrayList<Connectable>();
+/**
+ * @author Laurent Vouriot
+ * classe démarreur pour démarrer les connectables, design pattern Observer, correspond au sujet
+ */
+public class Demarreur  extends AbsObserver {
 
     public Demarreur() {}
 
+    //private Collection<Connectable> ObjetActives = new ArrayList<>();
+
+    @Override
     public void demarrerLesActives() {
-        for(Connectable c : objets) {
+
+        for(Connectable c : getObjetActives()) {
             c.demarrer();
         }
     }//demarrerLesActives()
-
+    @Override
     public void attacher(Connectable c) {
-        objets.add(c);
-    }//attacher()
+        getObjetActives().add(c);
+        System.out.println(c + " attaché !");
+    }
+    @Override
+    public void detacher(Connectable c) {
+        getObjetActives().remove(c);
+        System.out.println(c + " détaché !");
+    }
 
-    public void detacher(Connectable c){
-        objets.add(c);
-    }//detacher()
-}
+}//Demarreur

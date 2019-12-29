@@ -1,13 +1,20 @@
 package fr.univamu.iut.exo4;
 
+
+/**
+ * @aurhor Laurent
+ * classe Cafetière fille de connectable
+ */
+
 public class Cafetiere implements Connectable {
-    @Override
+    public Cafetiere() {}
     public void equiper(String gadget) {
-        System.out.println("On équipe la cafetiere avec " + gadget);
-    }
+        System.out.println("bleep blop je suis une cafetière avec le gadget : " + gadget);
+    }//equiper()
 
     @Override
     public void demarrer() {
-        System.out.println("bipboopbap je démarre la cafetière");
+        System.out.println("démarrage de la cafetière");
     }//demarrer()
-}
+
+}//Cafetiere

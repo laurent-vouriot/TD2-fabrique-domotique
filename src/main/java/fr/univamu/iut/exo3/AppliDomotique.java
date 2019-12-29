@@ -1,5 +1,9 @@
 package fr.univamu.iut.exo3;
 
+/**
+ * @author laurent
+ * EXO 3 TD2
+ */
 public class AppliDomotique {
       public static void main(String[] args){
             Imprimante impLocale = new ImprimanteLocale();

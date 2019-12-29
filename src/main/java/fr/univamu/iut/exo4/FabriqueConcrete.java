@@ -1,11 +1,17 @@
 package fr.univamu.iut.exo4;
 
-public class FabriqueConnectableSony extends FabriqueAbstraiteConnectable {
+
+/**
+ * @author Laurent
+ * Fabrique concrète
+ */
+public class FabriqueConcrete extends Fabrique {
+
     @Override
-    public Connectable creer(String nomClasse) throws ClassNotFoundException {
+    public Connectable creer(String classe) throws ClassNotFoundException{
         Connectable c = null;
-        switch (nomClasse) {
-            case "Cafetiere":
+        switch (classe) {
+            case "Cafetière":
                 c = new Cafetiere();
                 break;
             case "Radio":
@@ -14,15 +20,12 @@ public class FabriqueConnectableSony extends FabriqueAbstraiteConnectable {
             case "Radiateur":
                 c = new Radiateur();
                 break;
-            default:
-                throw new ClassNotFoundException();
         }
-
         return c;
     }
 
     @Override
     public void equiper(Connectable c) {
-        c.equiper("mon gadget Sony");
+        c.equiper("antenne parabolique");
     }
 }

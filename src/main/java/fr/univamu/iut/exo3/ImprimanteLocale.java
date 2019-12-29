@@ -2,7 +2,7 @@ package fr.univamu.iut.exo3;
 
 /**
  * @author Laurent
- * imprimante locale, implemente Imprimante
+ * imprimante locale, est une sorte d'imprimante
  */
 public class ImprimanteLocale implements Imprimante{
 

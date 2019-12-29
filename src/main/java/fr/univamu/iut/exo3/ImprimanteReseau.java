@@ -2,7 +2,7 @@ package fr.univamu.iut.exo3;
 
 /**
  * @author Laurent
- * ImprimanteReseau implemente Imprimante
+ * Imprimante réseau est une sorte d'imprimante
  */
 public class ImprimanteReseau implements Imprimante {
 

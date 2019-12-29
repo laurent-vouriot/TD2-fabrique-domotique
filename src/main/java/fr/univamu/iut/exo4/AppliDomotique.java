@@ -1,101 +1,99 @@
 package fr.univamu.iut.exo4;
 
-
-import java.awt.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Collection;
 
+/**
+ * TD 2 EXO 4
+ * @author Laurent Vouriot
+ */
 public class AppliDomotique {
     static ArrayList<Connectable> objets = new ArrayList<Connectable>();
-    static FabriqueAbstraiteConnectable fab = new FabriqueConnectableSony();
+    static Fabrique    fab               = new FabriqueConcrete();
+    static Demarreur   demarreur         = new Demarreur();
 
     public static String menu() {
-        String nomClasse = new String();
-        System.out.println("Taper Entrée pour finir ou le nom de la classe de l'objet à connecter");
+        String choix = new String();
+        System.out.println("Taper Entrée pour finir, ou le nom de l'objet à créer");
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         try {
-            nomClasse = in.readLine();
+            choix = in.readLine();
         } catch (IOException e) {
+            System.out.println("Problème de saisie");
         }
-        return nomClasse;
-    }
+        return choix;
+    }//menu()
 
+    public static void connecter(String type) {
+        try {
+            Connectable c = fab.fabriquer(type);
+            objets.add(c);
+            System.out.println("Ajout d'un nouvel objet connectable : "  + c.getClass());
+        } catch( ClassNotFoundException cnfe) {
+            cnfe.getCause();
+        }
 
-    static public ArrayList<Connectable> activer(ArrayList<Connectable> objets) {
+    }//connecter()
+
+    public static void activer() {
+        String choix = new String();
         for (Connectable c : objets) {
-            Demarreur d = new Demarreur();
-            String choixUser = new String();
-            System.out.println("voulez vous activer " + c + "  (yes/no) ?");
             BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+            System.out.println("voulez vous activer (y/n) " + c);
             try {
-                choixUser = in.readLine();
-                if (choixUser.equals("yes")) {
-                    System.out.println("attaché \n");
-                    d.attacher(c);
+                choix = in.readLine();
+            } catch (IOException ioe) {
+                ioe.printStackTrace();
+            }
+            switch (choix) {
+                case "y":
+                        demarreur.attacher(c);
+                        break;
+                    case "n":
+                        break;
+                    default:
+                        System.out.println("erreur de saisie usage : y/n");
+                        break;
                 }
-                else if (choixUser.equals("no")) {
-                    System.out.println("pas attaché \n");
-                }
-                else
-                    System.out.printf("erreur : yes/no \n");
-            } catch (IOException e) {
-                e.getMessage();
-            }//catch()
-            d.demarrerLesActives();
         }
-        return objets;
     }//activer()
 
-
-    static public void gererConnectables(ArrayList<Connectable> objets) {
-        for(Connectable c : objets ) {
-
-            Demarreur d = new Demarreur();
-            String choixUser = new String();
-            System.out.println("détacher " + c + "? (y/n)");
-            BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+    public static void desactiver() {
+        String choix = new String();
+        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+        for (Connectable c : objets) {
+            System.out.println("voulez vous détacher (y/n) " + c);
             try {
-                choixUser = in.readLine();
-                if (choixUser.equals("yes")) {
-                    System.out.println(c + "détacher \n");
-                    d.detacher(c);
-                }
-                else if (choixUser.equals("no")) {
-                    System.out.println(c + " pas détaché \n");
-                }
-                else
-                    System.out.printf("erreur : yes/no \n");
-            } catch (IOException e) {
-                e.getMessage();
-            }//catch()
-
-
+                choix = in.readLine();
+            } catch (IOException ioe) {
+                ioe.printStackTrace();
+            }
+            switch(choix) {
+                case "y":
+                    demarreur.detacher(c);
+                    break;
+                case "n":
+                    break;
+                default:
+                    System.out.println("erreur de saisie usage : y/n");
+                    break;
+            }
         }
-
-    }//gererConnectables()
+    }//desactiver()
 
     public static void main(String[] args) {
-
-        Radio     radio     = new Radio();
-        Radiateur radiateur = new Radiateur();
-        Cafetiere Cafetiere = new Cafetiere();
-
-        objets.add(radiateur);
-        objets.add(radio);
-        objets.add(Cafetiere);
-        ArrayList<Connectable> test = activer(objets);
-        gererConnectables(test);
-
-        for (Connectable c : test) {
-            test.toString();
+        String type = menu();
+        while (!(type.isEmpty())) {
+            connecter(type);
+            type = menu();
         }
+        System.out.println(objets);
 
-
-
-
-    }
-
+        activer();
+        demarreur.demarrerLesActives();
+        desactiver();
+        demarreur.demarrerLesActives();
+    }//main()
 }

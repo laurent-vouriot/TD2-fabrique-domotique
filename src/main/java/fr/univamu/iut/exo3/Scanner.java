@@ -2,11 +2,11 @@ package fr.univamu.iut.exo3;
 
 /**
  * @author laurent
- * classe scanner implemente Imprimante
+ * classe scanner est une sorte d'imprimante
  */
-public class Scanner implements Imprimante {
+public class Scanner implements Decorateur {
 
-    Imprimante imprimanteADecorer;
+   Imprimante imprimanteADecorer;
 
     public Scanner(Imprimante imprimante) { imprimanteADecorer = imprimante;}
 

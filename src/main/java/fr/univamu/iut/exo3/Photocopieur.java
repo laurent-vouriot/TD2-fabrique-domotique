@@ -4,7 +4,7 @@ package fr.univamu.iut.exo3;
  * @author Laurent
  * classe photocopieur implemente Photocopieur
  */
-public class Photocopieur implements Imprimante{
+public class Photocopieur implements Decorateur {
 
     Imprimante imprimanteADecorer;
 
