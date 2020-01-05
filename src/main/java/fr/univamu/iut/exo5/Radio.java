@@ -4,7 +4,7 @@ import fr.univamu.iut.exo4.Connectable;
 
 /**
  * @aurhor Laurent
- * classe Radio, fille de connectable
+ * classe Radio implemente Connectable
  */
 
 public class Radio implements Connectable {

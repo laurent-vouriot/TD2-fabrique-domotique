@@ -5,7 +5,7 @@ import fr.univamu.iut.exo4.Connectable;
 
 /**
  * @aurhor Laurent
- * classe Cafetière fille de connectable
+ * classe Cafetière implemente de connectable
  */
 
 public class Cafetiere implements Connectable {
