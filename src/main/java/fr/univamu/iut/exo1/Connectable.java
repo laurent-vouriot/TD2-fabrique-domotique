@@ -1,6 +1,9 @@
 package fr.univamu.iut.exo1;
 
+/**
+ * @author Laurent Vouriot
+ * interface Connectable, interface pour les dispositifs éléctroniques qui seront connectés à l'application domotique
+ */
 public interface Connectable {
-
-    public void equiper(String gadget);
+    void equiper(String gadget);
 }

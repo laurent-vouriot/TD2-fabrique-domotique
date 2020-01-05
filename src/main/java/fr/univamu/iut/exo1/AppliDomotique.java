@@ -8,7 +8,6 @@ import java.util.ArrayList;
 /**
  * TD 2 EXO 1
  * @author Laurent Vouriot
- *
  */
 public class AppliDomotique {
     static ArrayList<Connectable> objets = new ArrayList<Connectable>();

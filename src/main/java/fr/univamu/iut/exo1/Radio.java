@@ -1,8 +1,9 @@
 package fr.univamu.iut.exo1;
 
 /**
- * @class Radio
- */
+ * @author Laurent Vouriot
+ * classe radion, est une réalisation d'interface de Connectable
+ * */
 public class Radio implements Connectable{
     public Radio () {}
     public void equiper(String gadget) {
