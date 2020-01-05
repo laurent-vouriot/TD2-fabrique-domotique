@@ -2,7 +2,7 @@ package fr.univamu.iut.exo2;
 
 /**
  * @aurhor Laurent
- * classe radiateur fille de connectable
+ * classe radiateur implémente connectable
  */
 public class Radiateur implements Connectable{
     @Override

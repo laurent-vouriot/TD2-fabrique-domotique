@@ -2,7 +2,7 @@ package fr.univamu.iut.exo2;
 
 /**
  * @aurhor Laurent
- * classe Radio, fille de connectable
+ * classe Radio implemente connectable
  */
 
 public class Radio implements Connectable {

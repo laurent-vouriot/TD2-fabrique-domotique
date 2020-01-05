@@ -6,8 +6,8 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 /**
- * TD 2 EXO 2
  * @author Laurent Vouriot
+ * TD 2 EXO 2 design pattern de la fabrique
  */
 public class AppliDomotique {
     static ArrayList<Connectable> objets = new ArrayList<Connectable>();
