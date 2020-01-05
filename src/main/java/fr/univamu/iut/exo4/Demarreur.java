@@ -1,7 +1,6 @@
 package fr.univamu.iut.exo4;
 
-import java.util.ArrayList;
-import java.util.Collection;
+
 
 /**
  * @author Laurent Vouriot
@@ -10,8 +9,6 @@ import java.util.Collection;
 public class Demarreur  extends AbsObserver {
 
     public Demarreur() {}
-
-    //private Collection<Connectable> ObjetActives = new ArrayList<>();
 
     @Override
     public void demarrerLesActives() {

@@ -6,8 +6,8 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 /**
- * TD 2 EXO 4
  * @author Laurent Vouriot
+ * TD 2 EXO 4
  */
 public class AppliDomotique {
     static ArrayList<Connectable> objets = new ArrayList<Connectable>();

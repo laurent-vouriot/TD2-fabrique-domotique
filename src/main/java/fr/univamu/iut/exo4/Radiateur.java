@@ -2,7 +2,7 @@ package fr.univamu.iut.exo4;
 
 /**
  * @aurhor Laurent
- * classe radiateur fille de connectable
+ * classe radiateur  implemente Connectable
  */
 public class Radiateur implements Connectable {
     public Radiateur() {}
