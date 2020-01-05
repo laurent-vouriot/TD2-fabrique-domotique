@@ -7,4 +7,4 @@ package fr.univamu.iut.exo3;
  */
 public interface Imprimante {
      void imprimer();
-}//Imprimante
+}

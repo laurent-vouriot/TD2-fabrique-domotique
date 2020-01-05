@@ -2,7 +2,7 @@ package fr.univamu.iut.exo3;
 
 /**
  * @author laurent
- * EXO 3 TD2
+ * EXO 3 TD2 design pattern du Decorateur
  */
 public class AppliDomotique {
       public static void main(String[] args){
@@ -23,7 +23,6 @@ public class AppliDomotique {
 
             impLocaleScannerPhotocopieur.imprimer();
             impReseuFaxScanner.imprimer();
-
 
       }//main()
 }//AppliDomotique
