@@ -11,7 +11,7 @@ public class Adaptateur implements Connectable {
 
     public Adaptateur(Imprimante imprimante) {
             imprimanteAAdapter = imprimante;
-    }//Adaptateur()
+    }
 
     public void imprimer() {
         imprimanteAAdapter.imprimer();
